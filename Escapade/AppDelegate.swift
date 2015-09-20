@@ -47,6 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MotionEngineDelegate {
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
         AudioServicesPlayAlertSound(1100)
+        
+        if (EscapadeState.sharedInstance.currState == EscapadeState.state.WaitingOnUber) {
+            EscapadeState.sharedInstance.currState = EscapadeState.state.AtHotel
+            self.localNotification("Escapade", body: "Your Uber is arriving now, have a great Escapade!", delay: 10);
+        }
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -77,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MotionEngineDelegate {
         case EscapadeState.state.AtAirport:
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
                 
-                self.localNotification("Escapade", body: "Reminder! Your flight is at gate B6 and it is now boarding", delay: 20)
+                self.localNotification("Escapade", body: "Reminder! Your flight is at gate B6 and it is now boarding", delay: 30)
             }
             break
         case EscapadeState.state.InFlight:
@@ -113,6 +118,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MotionEngineDelegate {
         case EscapadeState.state.InFlight:
             self.motion.endTracking()
             EscapadeState.sharedInstance.currState = EscapadeState.state.Landed
+            break
+        case EscapadeState.state.Landed:
+            let url = "https://escapade.abrarsyed.com/uber/uberXtime?longitude=-71.0064&latitude=42.3631"
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+                request(.GET, url)
+                    .response { (request, response, result, error) -> Void in
+                        //                print("\nrepsone", response, "\nrequest", request, "\nresult", result, "\nerror", error)
+                        //                print( JSON(data: result!))
+                        let ok = JSON(data: result!)
+                        self.localNotification("Escapade", body: "Your Uber will arrive to pick you up from the departure area in " + String(Int(ok["estimate"].stringValue)!/60) + " minutes", delay: 10)
+                }
+            }
             break
         default:
             break
