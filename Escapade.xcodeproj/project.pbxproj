@@ -11,6 +11,7 @@
 		1F570EA61BAE75F000A36E60 /* AirplaneMotionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F570EA51BAE75F000A36E60 /* AirplaneMotionEngine.swift */; settings = {ASSET_TAGS = (); }; };
 		1F6A1A1C1BAEA1C000964B4B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A1A1B1BAEA1C000964B4B /* State.swift */; settings = {ASSET_TAGS = (); }; };
 		CE1B8C811BAEDCB900D348F6 /* ReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B8C801BAEDCB900D348F6 /* ReturnViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1F6A1A1E1BAEC04800964B4B /* TravelFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A1A1D1BAEC04800964B4B /* TravelFlow.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CE33229E1BADDC20005EBC09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33229D1BADDC20005EBC09 /* AppDelegate.swift */; };
 		CE3322A01BADDC20005EBC09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33229F1BADDC20005EBC09 /* ViewController.swift */; };
 		CE3322A31BADDC20005EBC09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3322A11BADDC20005EBC09 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1F570EA51BAE75F000A36E60 /* AirplaneMotionEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirplaneMotionEngine.swift; sourceTree = "<group>"; };
 		1F6A1A1B1BAEA1C000964B4B /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		1F6A1A1D1BAEC04800964B4B /* TravelFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TravelFlow.storyboard; sourceTree = "<group>"; };
 		8C48C510FE5B1C64DA3C6D2E /* Pods-Escapade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Escapade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Escapade/Pods-Escapade.release.xcconfig"; sourceTree = "<group>"; };
 		980A886F552C64AF5F40BD3D /* Pods_Escapade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Escapade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B724219F76423E5C48830EA5 /* Pods-Escapade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Escapade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Escapade/Pods-Escapade.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				CE3322A61BADDC20005EBC09 /* LaunchScreen.storyboard */,
 				CE3322A91BADDC20005EBC09 /* Info.plist */,
 				1F6A1A1B1BAEA1C000964B4B /* State.swift */,
+				1F6A1A1D1BAEC04800964B4B /* TravelFlow.storyboard */,
 			);
 			path = Escapade;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				CE3322A81BADDC20005EBC09 /* LaunchScreen.storyboard in Resources */,
 				CEB6B32B1BADF51E008D4877 /* ItineraryTableViewCell.xib in Resources */,
 				CE3322A51BADDC20005EBC09 /* Assets.xcassets in Resources */,
+				1F6A1A1E1BAEC04800964B4B /* TravelFlow.storyboard in Resources */,
 				CE3322A31BADDC20005EBC09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
