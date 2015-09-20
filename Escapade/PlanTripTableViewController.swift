@@ -95,6 +95,10 @@ class PlanTripTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    @IBAction func sendInfo(sender: AnyObject) {
+        performSegueWithIdentifier("getItineraries", sender: self)
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "selectAirport" {
             if let destVC = segue.destinationViewController as? AirportSearchTableViewController {
@@ -105,6 +109,14 @@ class PlanTripTableViewController: UITableViewController {
                     destVC.editingType = Param.To
                     
                 }
+            }
+        }
+        
+        if segue.identifier == "getItineraries" {
+            if let destVC = segue.destinationViewController as?ItinerariesTableViewController {
+                destVC.departLoc = information[0].code
+                destVC.destLoc = information[1].code
+                destVC.departDate = information[2].code
             }
         }
     }

@@ -35,7 +35,13 @@ extension NSDate {
 }
 
 class ItinerariesTableViewController: UITableViewController {
-        
+
+    var departLoc : String!
+    var destLoc : String?
+    var departDate : String!
+    var returnDate : String!
+    var budget : String!
+    
     var data : JSON = "" {
         didSet {
             tableView.reloadData()
@@ -65,8 +71,8 @@ class ItinerariesTableViewController: UITableViewController {
     
     // MARK: - Alamofire
     func getSearchResults(query : String) {
-        let url = "https://escapade.abrarsyed.com/flights/airportAutoComplete?text=" + query
-        request(.GET, url)
+        let url = "https://escapade.abrarsyed.com/trips/buildTripList" + query
+        request(.POST, url, parameters: ["departLoc" : departLoc, "destLoc" : destLoc "departDate"  : departDate, "returnDate" : returnDate, "budget" : budget], encoding: ParameterEncoding.JSON, headers: nil)
             .response { (request, response, result, error) -> Void in
                 //                print("\nrepsone", response, "\nrequest", request, "\nresult", result, "\nerror", error)
                 //                print( JSON(data: result!))

@@ -136,6 +136,9 @@
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Take me on an Escapade!"/>
+                            <connections>
+                                <action selector="sendInfo:" destination="MVv-OM-fc9" eventType="touchUpInside" id="tac-TF-2uk"/>
+                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="X2A-il-Ezh" detailTextLabel="Twf-h9-L1Z" style="IBUITableViewCellStyleSubtitle" id="bVa-i3-hP8">
@@ -179,7 +182,7 @@
                         <outlet property="segmentedControl" destination="Axu-n3-9RH" id="rSU-H2-aKr"/>
                         <segue destination="uvc-FP-8qL" kind="show" identifier="selectAirport" id="oP5-Sa-53V"/>
                         <segue destination="VzW-IQ-RBT" kind="show" identifier="selectDates" id="uLq-Dg-PLL"/>
-                        <segue destination="toS-j0-CMm" kind="show" id="egF-O5-Gqr"/>
+                        <segue destination="toS-j0-CMm" kind="show" identifier="getItineraries" id="egF-O5-Gqr"/>
                         <segue destination="YrO-j3-MWg" kind="show" identifier="selectBudget" id="pSw-WC-fLF"/>
                     </connections>
                 </tableViewController>
@@ -190,7 +193,7 @@
         <!--Itineraries-->
         <scene sceneID="9sr-ps-Xsn">
             <objects>
-                <tableViewController title="Itineraries" id="toS-j0-CMm" sceneMemberID="viewController">
+                <tableViewController title="Itineraries" id="toS-j0-CMm" customClass="ItinerariesTableViewController" customModule="Escapade" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FY4-Va-hpT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
