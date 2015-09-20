@@ -10,7 +10,7 @@ import UIKit
 import CoreMotion
 
 protocol MotionEngineDelegate {
-    func landed() -> Bool
+    func landed() -> Void
 }
 
 class MotionEngine: NSObject {
@@ -19,8 +19,8 @@ class MotionEngine: NSObject {
     var altitudeManager:CMAltimeter = CMAltimeter()
     var delegate:MotionEngineDelegate! = nil
     var currentAltitude:NSNumber = 0
-    var totalDelta:NSNumber = 0
-    var totalMeasurements:Int = 0
+    var queue:NSMutableArray = NSMutableArray()
+    var called:Bool = false
     
     var prevAccelerometer:CMAccelerometerData! = nil
     enum state {
@@ -35,45 +35,63 @@ class MotionEngine: NSObject {
         return prev - curr
     }
     
+    func endTracking() {
+        self.altitudeManager.stopRelativeAltitudeUpdates()
+    }
+    
     func initialize(del: MotionEngineDelegate) {
+        
+        if (EscapadeState.sharedInstance.currState != EscapadeState.state.InFlight) {
+            self.endTracking()
+            return
+        }
+        
         self.delegate = del
         if (CMAltimeter.isRelativeAltitudeAvailable()) {
             altitudeManager.startRelativeAltitudeUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data, error) -> Void in
+                
+                
                 self.currentAltitude = self.currentAltitude.floatValue + data!.relativeAltitude.floatValue;
                 var epoch:Int = Int(NSDate().timeIntervalSince1970)
                 
-                self.totalDelta = self.totalDelta.floatValue + data!.relativeAltitude.floatValue
-                self.totalMeasurements += 1
+                self.queue.addObject(data!.relativeAltitude.floatValue)
                 NSLog("%@", data!)
                 
                 // Check the delta once a minute
-                if ((epoch % 6) == 0) {
+                var totalDelta:Float = 0.0
+                for (var i = 0; i < self.queue.count; i++) {
+                    totalDelta = Float(totalDelta) + self.queue[i].floatValue
+                }
+                
+                var averageDelta:NSNumber = totalDelta/Float(self.queue.count)
+                
+                if (self.queue.count >= 5) {
+                    self.queue.removeObjectAtIndex(0)
+                }
                     
-                    var averageDelta:NSNumber = self.totalDelta.floatValue/Float(self.totalMeasurements)
-                    
-                    switch (self.currState) {
+                switch (self.currState) {
                     case state.TakingOff:
-                        if (averageDelta < 0.3) {
+                        if (averageDelta > 0.6) {
                             self.currState = state.Cruising
                         }
                         NSLog("Taken off");
                         break
                     case state.Cruising:
-                        if (averageDelta < 0) {
+                        if (averageDelta < 0.3) {
                             self.currState = state.Landing
                         }
                         NSLog("Cruised")
                         break
                     case state.Landing:
-                        if (averageDelta < 0.2) {
-                            self.delegate.landed()
+                        if (averageDelta < 0.1) {
+                            if (self.called == false) {
+                                self.delegate.landed()
+                                self.called = true
+                            }
+                            
                         }
                         NSLog("Landed")
                         break
-                    }
-                    
-                    self.totalDelta = 0.0
-                    self.totalMeasurements = 0
                 }
                 
             })

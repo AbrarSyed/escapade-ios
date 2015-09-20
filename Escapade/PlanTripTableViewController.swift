@@ -15,9 +15,8 @@ struct plan {
 
     var code : String?
 }
-class PlanTripTableViewController: UITableViewController, MotionEngineDelegate {
+class PlanTripTableViewController: UITableViewController {
     
-    var ptr:MotionEngine! = nil
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBAction func selectedSegment(sender: AnyObject) {
@@ -45,17 +44,10 @@ class PlanTripTableViewController: UITableViewController, MotionEngineDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         selectedSegment(self)
-        self.ptr = MotionEngine()
-        self.ptr.initialize(self)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func landed() -> Bool {
-        NSLog("Lol fuck")
-        return true
     }
 
     // MARK: - Table view data source
