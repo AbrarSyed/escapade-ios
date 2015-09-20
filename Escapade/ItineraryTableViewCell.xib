@@ -41,7 +41,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-HI-VtM" userLabel="Hotel">
                                 <rect key="frame" x="0.0" y="29" width="315" height="24"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RA0-bt-WNg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RA0-bt-WNg">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hilton" translatesAutoresizingMaskIntoConstraints="NO" id="yVu-tu-wfI">
@@ -58,22 +58,22 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p8X-gd-PDY">
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p8X-gd-PDY">
                                                 <rect key="frame" x="109" y="0.0" width="102" height="24"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-BW-rgh">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-BW-rgh">
                                                         <rect key="frame" x="0.0" y="0.0" width="26" height="24"/>
                                                         <animations/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-Cd-boR">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-Cd-boR">
                                                         <rect key="frame" x="26" y="0.0" width="26" height="24"/>
                                                         <animations/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="wB2-0P-Qgq">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="wB2-0P-Qgq">
                                                         <rect key="frame" x="51" y="0.0" width="25" height="24"/>
                                                         <animations/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-T7-wrf">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-T7-wrf">
                                                         <rect key="frame" x="76" y="0.0" width="26" height="24"/>
                                                         <animations/>
                                                     </imageView>
@@ -83,7 +83,7 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <view contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-Wi-Wwk" customClass="HCSStarRatingView">
+                                    <view contentMode="scaleAspectFit" horizontalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-Wi-Wwk" customClass="HCSStarRatingView">
                                         <rect key="frame" x="215" y="0.0" width="100" height="24"/>
                                         <animations/>
                                         <color key="tintColor" red="0.94509804249999996" green="0.76862746479999999" blue="0.058823529630000003" alpha="1" colorSpace="calibratedRGB"/>
