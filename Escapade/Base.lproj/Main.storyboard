@@ -134,7 +134,8 @@
                             <rect key="frame" x="0.0" y="165" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <state key="normal" title="Button"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Take me on an Escapade!"/>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="X2A-il-Ezh" detailTextLabel="Twf-h9-L1Z" style="IBUITableViewCellStyleSubtitle" id="bVa-i3-hP8">
@@ -177,12 +178,44 @@
                     <connections>
                         <outlet property="segmentedControl" destination="Axu-n3-9RH" id="rSU-H2-aKr"/>
                         <segue destination="uvc-FP-8qL" kind="show" identifier="selectAirport" id="oP5-Sa-53V"/>
-                        <segue destination="VzW-IQ-RBT" kind="show" id="uLq-Dg-PLL"/>
+                        <segue destination="VzW-IQ-RBT" kind="show" identifier="selectDates" id="uLq-Dg-PLL"/>
+                        <segue destination="toS-j0-CMm" kind="show" id="egF-O5-Gqr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-dn-auL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="363"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="9sr-ps-Xsn">
+            <objects>
+                <tableViewController id="toS-j0-CMm" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FY4-Va-hpT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itineraryCell" id="bh5-ld-0Pq" customClass="ItineraryTableViewCell" customModule="Escapade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bh5-ld-0Pq" id="w2h-oN-KjD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="toS-j0-CMm" id="qcP-Zr-Fon"/>
+                            <outlet property="delegate" destination="toS-j0-CMm" id="cZT-LG-ORD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv4-bb-ALL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669" y="363"/>
         </scene>
         <!--Search Airports-->
         <scene sceneID="bth-vU-S1r">
@@ -248,6 +281,54 @@
                     <view key="view" contentMode="scaleToFill" id="4wi-6d-Nyx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="088-DM-WX3">
+                                <rect key="frame" x="140" y="131" width="320" height="473"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lHb-4n-eSc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="237"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYT-iU-KpR">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-Mw-ogh">
+                                                <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                                <animations/>
+                                                <date key="date" timeIntervalSinceReferenceDate="464424458.75105298">
+                                                    <!--2015-09-20 06:47:38 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KYN-s1-8fu">
+                                        <rect key="frame" x="0.0" y="237" width="320" height="237"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-e2-X1e">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="69a-v7-POY">
+                                                <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                                <animations/>
+                                                <date key="date" timeIntervalSinceReferenceDate="464424443.62905401">
+                                                    <!--2015-09-20 06:47:23 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

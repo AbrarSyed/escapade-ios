@@ -16,6 +16,7 @@
 		CE3322B31BADDC20005EBC09 /* EscapadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3322B21BADDC20005EBC09 /* EscapadeTests.swift */; };
 		CE3322BE1BADDC20005EBC09 /* EscapadeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3322BD1BADDC20005EBC09 /* EscapadeUITests.swift */; };
 		CE8117D21BAE14870045416C /* PlanTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8117D11BAE14870045416C /* PlanTripTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CE8DF92B1BAE749900774D10 /* ItinerariesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF92A1BAE749900774D10 /* ItinerariesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CEA63E651BAE258A004297A1 /* AirportSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA63E641BAE258A004297A1 /* AirportSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CEB6B32A1BADF51E008D4877 /* ItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6B3281BADF51E008D4877 /* ItineraryTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		CEB6B32B1BADF51E008D4877 /* ItineraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB6B3291BADF51E008D4877 /* ItineraryTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +57,7 @@
 		CE3322BD1BADDC20005EBC09 /* EscapadeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapadeUITests.swift; sourceTree = "<group>"; };
 		CE3322BF1BADDC20005EBC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8117D11BAE14870045416C /* PlanTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTripTableViewController.swift; sourceTree = "<group>"; };
+		CE8DF92A1BAE749900774D10 /* ItinerariesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItinerariesTableViewController.swift; sourceTree = "<group>"; };
 		CEA63E641BAE258A004297A1 /* AirportSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportSearchTableViewController.swift; sourceTree = "<group>"; };
 		CEB6B3281BADF51E008D4877 /* ItineraryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewCell.swift; sourceTree = "<group>"; };
 		CEB6B3291BADF51E008D4877 /* ItineraryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItineraryTableViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				CE3322A11BADDC20005EBC09 /* Main.storyboard */,
 				CE8117D11BAE14870045416C /* PlanTripTableViewController.swift */,
 				CEA63E641BAE258A004297A1 /* AirportSearchTableViewController.swift */,
+				CE8DF92A1BAE749900774D10 /* ItinerariesTableViewController.swift */,
 				CEB6B3281BADF51E008D4877 /* ItineraryTableViewCell.swift */,
 				CEB6B3291BADF51E008D4877 /* ItineraryTableViewCell.xib */,
 				CE3322A41BADDC20005EBC09 /* Assets.xcassets */,
@@ -346,6 +349,7 @@
 				CEB6B32A1BADF51E008D4877 /* ItineraryTableViewCell.swift in Sources */,
 				CEA63E651BAE258A004297A1 /* AirportSearchTableViewController.swift in Sources */,
 				CE3322A01BADDC20005EBC09 /* ViewController.swift in Sources */,
+				CE8DF92B1BAE749900774D10 /* ItinerariesTableViewController.swift in Sources */,
 				CE33229E1BADDC20005EBC09 /* AppDelegate.swift in Sources */,
 				CE8117D21BAE14870045416C /* PlanTripTableViewController.swift in Sources */,
 			);

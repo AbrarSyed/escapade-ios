@@ -22,19 +22,20 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var landingAirport: UILabel!
     
     @IBOutlet weak var flightTime: UILabel!
-    @IBOutlet weak var flightCost: UILabel!
-    
     
     @IBOutlet weak var hotelImage: UIImageView!
     @IBOutlet weak var hotelName: UILabel!
     @IBOutlet weak var hotelRating: HCSStarRatingView!
-    @IBOutlet weak var hotelCost: UILabel!
+    
+    @IBOutlet weak var totalCost: UILabel!
+
     
     func initialize( airlineImage: String, airlineName: String,
         departTime: String, departAirport: String, numberOfStops: String, landingTime: String, landingAirport: String,
-        flightTime: String, flightCost: String, hotelImage: String, hotelName: String, hotelRating: CGFloat, hotelCost: String)
+        flightTime: String, hotelImage: String, hotelName: String, hotelRating: CGFloat, totalCost: String)
     {
-        self.airlineImage.image = UIImage(named: airlineImage)
+        let url = NSURL(string: "http://a2.r9cdn.net/res/images/air/2x/\(airlineImage).png")
+        self.airlineImage.image = UIImage(data: NSData(contentsOfURL: url!)!)
         self.airlineName.text = airlineName
         self.departTime.text = departTime
         self.departAirport.text = departAirport
@@ -42,11 +43,10 @@ class ItineraryTableViewCell: UITableViewCell {
         self.landingTime.text = landingTime
         self.landingAirport.text = landingAirport
         self.flightTime.text = flightTime
-        self.flightCost.text = flightCost
         self.hotelImage.image = UIImage(named: hotelImage)
         self.hotelName.text = hotelName
         self.hotelRating.value = hotelRating
-        self.hotelCost.text = hotelCost
+        self.totalCost.text = totalCost
     }
     override func awakeFromNib() {
         super.awakeFromNib()
