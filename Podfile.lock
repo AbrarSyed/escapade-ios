@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (2.0.1)
+  - HCSStarRatingView (1.4.2)
+  - NMRangeSlider (1.2.1)
+  - Reachability (3.2)
+  - Spring (1.0.3)
+  - SwiftyJSON (2.3.0)
+  - XLForm (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - HCSStarRatingView (~> 1.4.2)
+  - NMRangeSlider
+  - Reachability
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
+  - SwiftyJSON
+  - XLForm
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift2
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  Alamofire: 1d8e208d616fbbfd2391b15eae766d07c96cdc49
+  HCSStarRatingView: 6157471eff9fe3ec7240e131a5b0aba39f097e57
+  NMRangeSlider: 317ded652431eb90501c8421d9cddc3930d891e6
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
+
+COCOAPODS: 0.38.2
