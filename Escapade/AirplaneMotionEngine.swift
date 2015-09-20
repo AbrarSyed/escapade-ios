@@ -86,6 +86,8 @@ class MotionEngine: NSObject {
                         if (averageDelta < 0.1) {
                             if (self.called == false) {
                                 self.delegate.landed()
+                                EscapadeState.sharedInstance.currState = EscapadeState.state.Landed
+                                self.endTracking()
                                 self.called = true
                             }
                             

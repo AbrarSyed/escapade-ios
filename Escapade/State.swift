@@ -16,7 +16,7 @@ class EscapadeState : NSObject {
         case InFlight
         case Landed
         case AtSecondAirport
-        case InUber
+        case WaitingOnUber
         case AtHotel
     }
     
