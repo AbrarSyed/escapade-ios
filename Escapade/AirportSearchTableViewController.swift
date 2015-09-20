@@ -17,7 +17,7 @@ enum Param {
     case Price
 }
 
-class AirportSearchTableViewController: UITableViewController {
+class AirportSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     var editingType : Param! {
         didSet {
@@ -66,9 +66,14 @@ class AirportSearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.becomeFirstResponder()
     }
-
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

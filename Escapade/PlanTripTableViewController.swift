@@ -79,9 +79,19 @@ class PlanTripTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath
         let row = indexPath.row
-        if viewingInfo[row].title == "From" || viewingInfo[row].title == "To" {
+        if viewingInfo[row].title == "From" || viewingInfo[row].title == "To"
+        {
             performSegueWithIdentifier("selectAirport", sender: self)
         }
+        else if viewingInfo[row].title == "Dates"
+        {
+            performSegueWithIdentifier("selectDates", sender: self)
+        }
+        else if viewingInfo[row].title == "Budget"
+        {
+            performSegueWithIdentifier("selectBudget", sender: self)
+        }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

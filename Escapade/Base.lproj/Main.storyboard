@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LuZ-Wi-iuo">
@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-o6-Mnf">
@@ -60,7 +60,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-Wg-Khv">
@@ -150,7 +150,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Twf-h9-L1Z">
@@ -158,7 +158,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -180,16 +180,17 @@
                         <segue destination="uvc-FP-8qL" kind="show" identifier="selectAirport" id="oP5-Sa-53V"/>
                         <segue destination="VzW-IQ-RBT" kind="show" identifier="selectDates" id="uLq-Dg-PLL"/>
                         <segue destination="toS-j0-CMm" kind="show" id="egF-O5-Gqr"/>
+                        <segue destination="YrO-j3-MWg" kind="show" identifier="selectBudget" id="pSw-WC-fLF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-dn-auL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="363"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Itineraries-->
         <scene sceneID="9sr-ps-Xsn">
             <objects>
-                <tableViewController id="toS-j0-CMm" sceneMemberID="viewController">
+                <tableViewController title="Itineraries" id="toS-j0-CMm" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FY4-Va-hpT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,10 +213,32 @@
                             <outlet property="delegate" destination="toS-j0-CMm" id="cZT-LG-ORD"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="y44-Xf-0e3" kind="show" id="E12-yf-kU3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lv4-bb-ALL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2669" y="363"/>
+        </scene>
+        <!--Itinerary Detail-->
+        <scene sceneID="sOf-nN-TUm">
+            <objects>
+                <viewController title="Itinerary Detail" id="y44-Xf-0e3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="afm-k1-ohm"/>
+                        <viewControllerLayoutGuide type="bottom" id="e0G-hS-B6M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dz3-M0-da9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7j-pX-cdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3471" y="363"/>
         </scene>
         <!--Search Airports-->
         <scene sceneID="bth-vU-S1r">
@@ -248,7 +271,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -268,12 +291,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNg-Gx-qMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="1248"/>
+            <point key="canvasLocation" x="1243" y="1276"/>
         </scene>
         <!--Select Dates-->
         <scene sceneID="cWN-E5-U2D">
             <objects>
-                <viewController title="Select Dates" id="VzW-IQ-RBT" sceneMemberID="viewController">
+                <viewController title="Select Dates" id="VzW-IQ-RBT" customClass="DatesViewController" customModule="Escapade" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hqq-Tb-920"/>
                         <viewControllerLayoutGuide type="bottom" id="kuZ-7u-JSo"/>
@@ -282,41 +305,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="088-DM-WX3">
-                                <rect key="frame" x="140" y="131" width="320" height="473"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="088-DM-WX3">
+                                <rect key="frame" x="28" y="72" width="544" height="520"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lHb-4n-eSc">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="237"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lHb-4n-eSc">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="284"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYT-iU-KpR">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYT-iU-KpR">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-Mw-ogh">
-                                                <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-Mw-ogh">
+                                                <rect key="frame" x="0.0" y="21" width="544" height="263"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="263" id="UKJ-h9-EYM"/>
+                                                </constraints>
                                                 <date key="date" timeIntervalSinceReferenceDate="464424458.75105298">
                                                     <!--2015-09-20 06:47:38 +0000-->
                                                 </date>
+                                                <date key="minimumDate" timeIntervalSinceReferenceDate="464436000">
+                                                    <!--2015-09-20 10:00:00 +0000-->
+                                                </date>
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="536410800">
+                                                    <!--2017-12-31 11:00:00 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="startDateChanged:" destination="VzW-IQ-RBT" eventType="valueChanged" id="8eZ-cD-v3D"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KYN-s1-8fu">
-                                        <rect key="frame" x="0.0" y="237" width="320" height="237"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KYN-s1-8fu">
+                                        <rect key="frame" x="0.0" y="284" width="544" height="236"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-e2-X1e">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-e2-X1e">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="jPA-fL-9xt"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="69a-v7-POY">
-                                                <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="69a-v7-POY">
+                                                <rect key="frame" x="0.0" y="21" width="544" height="215"/>
                                                 <animations/>
                                                 <date key="date" timeIntervalSinceReferenceDate="464424443.62905401">
                                                     <!--2015-09-20 06:47:23 +0000-->
@@ -327,15 +365,74 @@
                                     </stackView>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="KYN-s1-8fu" firstAttribute="top" secondItem="088-DM-WX3" secondAttribute="top" constant="284" id="BCu-cj-vdo"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kuZ-7u-JSo" firstAttribute="top" secondItem="088-DM-WX3" secondAttribute="bottom" constant="8" id="0Pw-6J-ksM"/>
+                            <constraint firstItem="088-DM-WX3" firstAttribute="top" secondItem="Hqq-Tb-920" secondAttribute="bottom" constant="8" id="6VK-j7-bQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="088-DM-WX3" secondAttribute="trailing" constant="8" id="gQr-Z1-x9q"/>
+                            <constraint firstItem="088-DM-WX3" firstAttribute="leading" secondItem="4wi-6d-Nyx" secondAttribute="leadingMargin" constant="8" id="hJX-wD-pqc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endDate" destination="69a-v7-POY" id="eBa-qT-phZ"/>
+                        <outlet property="startDate" destination="YMU-Mw-ogh" id="JLB-6z-iP8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRk-UF-8GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="1250"/>
+            <point key="canvasLocation" x="1873" y="1276"/>
+        </scene>
+        <!--Budget View Controller-->
+        <scene sceneID="ad7-Uo-JOX">
+            <objects>
+                <viewController id="YrO-j3-MWg" customClass="BudgetViewController" customModule="Escapade" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fh1-OV-DSS"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0o-Mp-eBF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mQm-uq-P26">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-y1-PQk">
+                                <rect key="frame" x="26" y="285" width="564" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderSlid:" destination="YrO-j3-MWg" eventType="valueChanged" id="fDM-vb-VO6"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aD-wt-Lvm">
+                                <rect key="frame" x="279" y="323" width="42" height="27.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4aD-wt-Lvm" firstAttribute="top" secondItem="PN1-y1-PQk" secondAttribute="bottom" constant="8" id="7FQ-1G-l1B"/>
+                            <constraint firstItem="PN1-y1-PQk" firstAttribute="leading" secondItem="mQm-uq-P26" secondAttribute="leadingMargin" constant="8" id="NdC-Nf-xHn"/>
+                            <constraint firstItem="PN1-y1-PQk" firstAttribute="trailing" secondItem="mQm-uq-P26" secondAttribute="trailingMargin" constant="8" id="WZT-W9-q15"/>
+                            <constraint firstItem="PN1-y1-PQk" firstAttribute="centerY" secondItem="mQm-uq-P26" secondAttribute="centerY" id="dLa-ap-E9s"/>
+                            <constraint firstItem="4aD-wt-Lvm" firstAttribute="centerX" secondItem="mQm-uq-P26" secondAttribute="centerX" id="gkf-6z-cue"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="budgetLabel" destination="4aD-wt-Lvm" id="7Qu-41-aRa"/>
+                        <outlet property="slider" destination="PN1-y1-PQk" id="ixW-8m-uoZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ1-VY-d9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2501" y="1276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JMA-DU-y3X">
