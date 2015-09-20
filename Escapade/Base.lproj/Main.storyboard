@@ -184,6 +184,7 @@
                         <segue destination="VzW-IQ-RBT" kind="show" identifier="selectDates" id="uLq-Dg-PLL"/>
                         <segue destination="toS-j0-CMm" kind="show" identifier="getItineraries" id="egF-O5-Gqr"/>
                         <segue destination="YrO-j3-MWg" kind="show" identifier="selectBudget" id="pSw-WC-fLF"/>
+                        <segue destination="081-3X-Dor" kind="show" identifier="selectReturn" id="RPX-XG-utN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-dn-auL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +295,96 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNg-Gx-qMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="1276"/>
+            <point key="canvasLocation" x="1015" y="1334"/>
+        </scene>
+        <!--Select Dates-->
+        <scene sceneID="WFg-UD-kP9">
+            <objects>
+                <viewController title="Select Dates" id="081-3X-Dor" customClass="ReturnViewController" customModule="Escapade" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KMX-b5-4ro"/>
+                        <viewControllerLayoutGuide type="bottom" id="w3o-IX-bCs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O6h-wH-iI1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bg9-pK-9fe">
+                                <rect key="frame" x="28" y="72" width="544" height="520"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WdT-Hc-arM">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="284"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuA-UA-yAx">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="noe-98-QdZ">
+                                                <rect key="frame" x="0.0" y="21" width="544" height="263"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="263" id="u4a-Ji-dwV"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="464424458.75105298">
+                                                    <!--2015-09-20 06:47:38 +0000-->
+                                                </date>
+                                                <date key="minimumDate" timeIntervalSinceReferenceDate="464436000">
+                                                    <!--2015-09-20 10:00:00 +0000-->
+                                                </date>
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="536410800">
+                                                    <!--2017-12-31 11:00:00 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qv8-dV-2Iu">
+                                        <rect key="frame" x="0.0" y="284" width="544" height="236"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-Uq-Tit">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="236"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="1Ah-wp-zNw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1Ah-wp-zNw"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="Qv8-dV-2Iu" firstAttribute="top" secondItem="Bg9-pK-9fe" secondAttribute="top" constant="284" id="0W4-oJ-1nw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bg9-pK-9fe" firstAttribute="leading" secondItem="O6h-wH-iI1" secondAttribute="leadingMargin" constant="8" id="0yr-JU-a6Q"/>
+                            <constraint firstItem="Bg9-pK-9fe" firstAttribute="top" secondItem="KMX-b5-4ro" secondAttribute="bottom" constant="8" id="HgJ-F0-olx"/>
+                            <constraint firstItem="w3o-IX-bCs" firstAttribute="top" secondItem="Bg9-pK-9fe" secondAttribute="bottom" constant="8" id="Rhz-yg-y4G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bg9-pK-9fe" secondAttribute="trailing" constant="8" id="t7I-85-eXt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="noe-98-QdZ" id="G0b-ad-NPr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lS8-aZ-wRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="1334"/>
         </scene>
         <!--Select Dates-->
         <scene sceneID="cWN-E5-U2D">
@@ -389,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRk-UF-8GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1276"/>
+            <point key="canvasLocation" x="2321" y="1334"/>
         </scene>
         <!--Budget View Controller-->
         <scene sceneID="ad7-Uo-JOX">
@@ -435,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJ1-VY-d9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2501" y="1276"/>
+            <point key="canvasLocation" x="2983" y="1334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JMA-DU-y3X">

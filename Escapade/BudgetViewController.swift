@@ -50,8 +50,8 @@ class BudgetViewController: UIViewController {
     func saveAndReturn() {
         if let prevVC = backViewController as? PlanTripTableViewController {
             
-            prevVC.information[3].response = "$\(floor(slider.value * 1000))"
-            prevVC.information[3].code = "\(floor(slider.value * 1000))"
+            prevVC.information[4].response = "$\(floor(slider.value * 1000))"
+            prevVC.information[4].code = "\(floor(slider.value * 1000))"
             
             self.navigationController?.popViewControllerAnimated(true)
         }

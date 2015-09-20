@@ -36,20 +36,22 @@ extension NSDate {
 
 class ItinerariesTableViewController: UITableViewController {
 
-    var departLoc : String!
+    var departLoc : String?
     var destLoc : String?
-    var departDate : String!
-    var returnDate : String!
-    var budget : String!
+    var departDate : String?
+    var returnDate : String?
+    var budget : String?
     
     var data : JSON = "" {
         didSet {
+            print(data)
             tableView.reloadData()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getSearchResults()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,11 +72,14 @@ class ItinerariesTableViewController: UITableViewController {
     }
     
     // MARK: - Alamofire
-    func getSearchResults(query : String) {
-        let url = "https://escapade.abrarsyed.com/trips/buildTripList" + query
-        request(.POST, url, parameters: ["departLoc" : departLoc, "destLoc" : destLoc "departDate"  : departDate, "returnDate" : returnDate, "budget" : budget], encoding: ParameterEncoding.JSON, headers: nil)
+    func getSearchResults() {
+        let url = "https://escapade.abrarsyed.com/trips/buildTripList"
+        let param : [String : AnyObject]? = ["departLoc" : departLoc ?? "", "destLoc" : destLoc ?? "", "departDate"  : departDate ?? "", "returnDate" : returnDate ?? "", "budget" : budget ?? ""]
+        
+        request(Method.POST, url, parameters: param, encoding: .JSON)
             .response { (request, response, result, error) -> Void in
-                //                print("\nrepsone", response, "\nrequest", request, "\nresult", result, "\nerror", error)
+                
+                print("\nrepsone", response, "\nrequest", request, "\nresult", result, "\nerror", error)
                 //                print( JSON(data: result!))
                 let ok = JSON(data: result!)
                 self.data = ok

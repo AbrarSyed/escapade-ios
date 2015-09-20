@@ -32,7 +32,7 @@ class PlanTripTableViewController: UITableViewController {
     
     var selectedIndex : NSIndexPath?
     
-    var information = [plan(title: "From", response: "Response", image: "", code : nil), plan(title: "To", response: "", image: "", code : nil), plan(title: "Dates", response: "Response", image: "aa", code : nil), plan(title: "Budget", response: "", image: "", code : nil)]
+    var information = [plan(title: "From", response: "", image: "", code : nil), plan(title: "To", response: "", image: "", code : nil), plan(title: "Departure Dates", response: "", image: "aa", code : nil), plan(title: "Return Date", response: "", image: "aa", code : nil), plan(title: "Budget", response: "", image: "", code : nil)]
     
     var viewingInfo : [plan] = []
     
@@ -83,9 +83,13 @@ class PlanTripTableViewController: UITableViewController {
         {
             performSegueWithIdentifier("selectAirport", sender: self)
         }
-        else if viewingInfo[row].title == "Dates"
+        else if viewingInfo[row].title == "Departure Dates"
         {
             performSegueWithIdentifier("selectDates", sender: self)
+        }
+        else if viewingInfo[row].title == "Return Date"
+        {
+            performSegueWithIdentifier("selectReturn", sender: self)
         }
         else if viewingInfo[row].title == "Budget"
         {
@@ -117,6 +121,8 @@ class PlanTripTableViewController: UITableViewController {
                 destVC.departLoc = information[0].code
                 destVC.destLoc = information[1].code
                 destVC.departDate = information[2].code
+                destVC.returnDate = information[3].code
+                destVC.budget = information[4].code
             }
         }
     }
